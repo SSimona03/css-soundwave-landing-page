@@ -5,6 +5,7 @@
 }
 
 body{
+    
     margin:0;
     height: 100vh;
     width: 100vw;
@@ -25,7 +26,7 @@ body{
         width: 100vw;
         max-width: 100%;
         top: 2vh;
-        
+        margin-bottom: 1rem;
     }
 
     .logo{
@@ -33,6 +34,7 @@ body{
         color: inherit;
         display: flex;
         align-items: center;
+        padding-left: 1.5rem;
     }
     .logo > img {
         padding: 1rem;
@@ -40,6 +42,7 @@ body{
 
     .nav-menu{
         white-space: nowrap;
+        padding-right: 1.5rem;
     }
     li > a{
         text-decoration: none;
@@ -60,6 +63,8 @@ body{
 
         .main-header{
             justify-content: space-around;
+            
+           
         }
     
 

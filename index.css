@@ -54,23 +54,76 @@ body{
 
 @layer contentBox{
 
+    .content{
+        position: absolute;
+        display: flex;
+        align-items: stretch; 
+        min-height: 70%;
+        bottom: 0;
+        left: 20%;
+    }
+
+    .image-box{
+        display: flex;      
+    }
+
+    .image-girl{
+        background-image: url(images/landing-page-girl.png);
+        max-height: 100vh;
+        min-width: 30vw;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom left;   
+    }
+
+    .content-box{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 1rem;
+        align-self: center;
+    }
     .content-box a{
         text-decoration: none;
         color: white;
     }
 
     .content-box > button{
-        background-color: blue;
+        background-color: #1762A7;
         border: none;
-        padding: 0.7rem;
-        border-radius: 5px;
+        padding: 0.8rem 1.5rem;
+        border-radius: 0.5rem;
+        font-style: inherit;
     }
+
 }
 
 @layer media{
-    @media screen and (max-width: 620px){
+    @media screen and (max-width: 904px){
 
+        .content .image-box .image-girl{
+            display: none;  
+        }
+    
 
+        .content{
+            justify-content: center;
+            padding-bottom: 40vh;
+            margin-right: 20vw;
+        }      
+    }
 
+    @media screen and (max-width: 604px){
+
+        .content .image-box .image-girl{
+            display: none;  
+        }
+    
+
+        .content{
+            justify-content: center;
+            padding-bottom: 40vh;
+            margin-right: 10vw;
+        }      
     }
 }
