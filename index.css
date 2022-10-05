@@ -1,0 +1,76 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+  
+}
+
+body{
+    margin:0;
+    
+}
+
+@layer backgroudCircles{
+    .circle-1{
+        position: absolute;
+        width: 25vw;                 /* ! use vw to make circle scalable */
+        height: 25vw;                /* ! use vw to make circle scalable */
+        border-radius: 50%;
+        background-color: rgb(188, 58, 128, .1);
+        bottom: 5vw;
+        left: 5vw;
+        z-index: -1;
+      }
+    
+      .circle-2{
+        position: absolute;
+        width: 45vw;
+        height: 45vw;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        overflow: hidden;
+      }
+      .circle-2::after{
+        content: '';
+        transform: translate(40%, 40%);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        background-color: rgb(52, 87, 178, .1);
+      }
+
+      .circle-3{
+        position: absolute;
+        width: 25vw;
+        height: 25vw;
+        border-radius: 50%;
+        background-color: rgb(52, 87, 178, .1);
+        top: 15vw;
+        left: 35vw;
+        z-index: -1;
+      }
+}
+
+
+@layer contentBox{
+
+    .content-box a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .content-box > button{
+        background-color: blue;
+        border: none;
+        padding: 0.7rem;
+        border-radius: 5px;
+    }
+}
+
+@layer media{
+    @media screen and (max-width: 620px){
+
+
+
+    }
+}
