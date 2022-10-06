@@ -17,6 +17,23 @@ body{
     color: white;
 }
 
+    .container{
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        
+    }
+
+    .container-footer {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+      
+        justify-content: space-between;
+        align-items: center;
+    }
+
 @layer Header{
     .main-header{
         position: relative;
@@ -34,16 +51,20 @@ body{
         color: inherit;
         display: flex;
         align-items: center;
-        padding-left: 1.5rem;
+       
+    }
+    .logo:hover{
+        color: #E80F88;
     }
     .logo > img {
         padding: 1rem;
     }
 
-    .nav-menu{
-        white-space: nowrap;
-        padding-right: 1.5rem;
+    .nav-menu a:hover{
+        color: #E80F88;
     }
+
+    
     li > a{
         text-decoration: none;
         color: inherit;
@@ -57,16 +78,121 @@ body{
 }
 
 
-@layer media{
-    
-    @media screen and (min-width: 1000px){
+@layer footer{
+    footer{
+     position: absolute;
+     background: #202027;
+     bottom: 0;
+     width: 100vw;
+     max-width: 100%;
+     padding: 2vh; 
+     font-weight: bold;
+     font-size: 1rem;
+    }
 
-        .main-header{
-            justify-content: space-around;
-            
+    @layer footer-text{
+
+        .container-footer{
+            max-width: 1200px;
            
+            
+        }
+        .footer-text > span {
+            padding-right: 1.5rem;
+        }
+        .footer-text{
+            padding-left: 5vw;
+            display: flex;
+            
+        }
+
+        .footer-text > span:hover{
+            cursor: pointer;
+            color: #E80F88;
+        }
+        
+    }
+    
+
+    @layer footer-media-items{
+
+        .footer-media{
+            display: flex;
+            flex-direction: row;
+            padding-right: 5vw;
         }
     
-
+        .tweeter{
+            background-image: url(images/twitter.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            padding-right: 1.5rem;
+            text-decoration: none;
+            color: white;
+        }
+        .tweeter::after{
+            content: "Tweeter";
+            padding-left: 2.5rem;
+        }
+    
+        .facebook{
+            background-image: url(images/facebook.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            text-decoration: none;
+            color: white;
+            
+        }
+        .facebook::after{
+            content: "Facebook";
+            padding-left: 2.5rem;
+        }
+    
+        .tweeter:hover{
+            cursor: pointer;
+            color: #E80F88;
+        }
+    
+        .facebook:hover{
+            cursor: pointer;
+            color: #E80F88;
+        }
+        a:visited {
+            text-decoration: none;
+        }
     }
+
+}
+
+          
+@media screen and (max-width: 604px){
+    .container-footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+ 
+    .footer-text {
+        margin-bottom: 1rem;
+        white-space: nowrap;
+    }
+
+    .nav-menu > ul{
+        display: none;
+    }
+
+    .nav-menu{
+        background-image: url("images/more.svg");
+        background-repeat: no-repeat;
+        background-size: 30px 40px;
+        width: 50px; 
+        height: 50px; 
+        margin-right: 2rem;
+    }
+
+    .nav-menu:hover{
+        cursor: pointer;
+    }
+
+
 }

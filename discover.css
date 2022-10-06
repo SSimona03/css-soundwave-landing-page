@@ -5,10 +5,142 @@
 
 body{
     margin:0;
+    height: 100vh;
+    font-family: Poppins, sans-serif;
 }
 
-body{
+ 
+.discovery-content{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 80vh;
+}
 
-  
+@layer discovery-content-left{
+
+    .discovery-content-left{
+    display: flex;
+    flex-direction: column;
+    margin-right: 5rem;
+    }
     
+    .discovery-content-left > h1{
+        font-size: 3rem;
+        font-weight: 500;
+        margin:0;
+    }
+
+    .content-left-icons{
+        display: flex;
+        flex-direction: row;
+    }
+    .content-left-icon > a{
+            text-decoration: none;
+            color: white;
+            padding-top: 1rem;
+            text-align: center;
+    }
+
+    .content-left-icons > div {
+        background-color: #202027;
+        padding: 1rem;
+        margin: 1.5rem 1rem 1.5rem 0;
+        
+    }
+
+    .content-left-icons > div:hover{
+        cursor: pointer; 
+        background-color: #E80F88;
+       
+    }
+    
+    .content-left-icon{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        width: 100px;
+        height: 100px;
+    }
+
+    .content-left-icon > img{
+        padding-top: 5px;
+        width: 40px;
+        margin: auto;
+    }
+
+    .content-left-icon > span{
+        padding-top: 1rem;
+        margin: auto;
+    }
 }
+
+
+@layer discovery-content-right{
+
+    .discovery-content-right > img{
+        max-width: 350px;
+    }
+}
+
+
+@layer media{
+
+    @media screen and (max-width: 1166px) {
+       
+        .discovery-content{
+            flex-direction: column;
+            margin: 1rem;
+        }
+
+        .discovery-content-left{
+            margin: 0;
+            margin-bottom: 2rem;
+        }
+
+        .discovery-content-left  h1 , .discovery-content-left > .content-left-icons,  .discovery-content-left  p {
+            margin: auto;
+        }
+        .discovery-content-left  p {
+            text-align: center;
+        }
+        
+    }
+
+    @media screen and (max-width: 700px){
+        .discovery-content-right{
+            display: none;
+        }
+
+        .content-left-icon{
+            width: 85px;
+            height: 85px;
+        }
+    
+        .content-left-icon > img{
+            width: 25px;
+        }
+        .content-left-icon > span{
+            font-size:15px;
+        }
+       
+
+        .discovery-content-left > h1{
+            font-size: 2rem;
+          
+        }
+    }
+
+
+    @media screen and (min-width: 1166px) {
+       
+        .discovery-content{
+            flex-direction: row;
+        }
+        
+    }
+
+}
+
+
