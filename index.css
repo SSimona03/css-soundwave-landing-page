@@ -89,11 +89,17 @@ body{
     }
 
     .content-box > button{
-        background-color: #1762A7;
+        background-color: #e80f866f;
         border: none;
+        font-family: inherit;
         padding: 0.8rem 1.5rem;
         border-radius: 0.5rem;
         font-style: inherit;
+    }
+
+    .content-box > button:hover, .content-box > button:focus{
+        background-color: #e80f86cc ;
+        cursor: pointer;
     }
 
 }
@@ -127,3 +133,5 @@ body{
         }      
     }
 }
+
+
